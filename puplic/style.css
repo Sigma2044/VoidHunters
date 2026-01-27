@@ -1,0 +1,226 @@
+/* ===== VOID HUNTERS — ULTRA NEON VOID THEME ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+    background: #05000a;
+    color: #f0eaff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ===== ANIMATED VOID NEBULA BACKGROUND ===== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(150, 0, 255, 0.35), transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 180, 0.25), transparent 60%),
+                radial-gradient(circle at 50% 90%, rgba(0, 200, 255, 0.25), transparent 60%);
+    filter: blur(80px);
+    animation: nebulaMove 18s infinite alternate ease-in-out;
+    z-index: -2;
+}
+
+@keyframes nebulaMove {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-5%, 3%) scale(1.2); }
+    100% { transform: translate(5%, -3%) scale(1.1); }
+}
+
+/* ===== FLOATING PARTICLES ===== */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.12;
+    z-index: -1;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7vw;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 0, 25, 0.55);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 20;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo .vh {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #a020f0, #ff00c8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: white;
+    box-shadow: 0 0 18px rgba(255, 0, 200, 0.5);
+}
+
+.logo .name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* ===== NAVIGATION ===== */
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #d8caff;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #ffffff;
+    text-shadow: 0 0 12px #b400ff;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+    padding: 90px 0 60px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #ffffff;
+    text-shadow: 0 0 25px rgba(180, 0, 255, 0.7);
+}
+
+.hero-content h2 {
+    margin-top: 12px;
+    font-size: 1.4rem;
+    color: #caaaff;
+}
+
+.hero-content p {
+    margin-top: 18px;
+    max-width: 550px;
+    opacity: 0.9;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #b400ff, #ff009d);
+    color: white;
+    box-shadow: 0 0 18px rgba(255, 0, 200, 0.4);
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(255, 0, 200, 0.7);
+}
+
+.btn.secondary {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #e8d8ff;
+}
+
+.btn.secondary:hover {
+    border-color: #ff00d4;
+    color: white;
+    text-shadow: 0 0 12px #ff00d4;
+}
+
+/* ===== CARD SECTIONS ===== */
+
+.card {
+    margin-top: 40px;
+    padding: 26px 24px;
+    border-radius: 20px;
+    background: rgba(15, 0, 35, 0.75);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 40px rgba(150, 0, 255, 0.25);
+}
+
+/* ===== ROSTER CARDS ===== */
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.player-card {
+    display: flex;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(25, 0, 55, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.25s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgba(180, 0, 255, 0.5);
+}
+
+.player-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ff00d4, #7a00ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    text-align: center;
+    padding: 40px 0 60px;
+    opacity: 0.7;
+    font-size: 0.85rem;
+}
+
