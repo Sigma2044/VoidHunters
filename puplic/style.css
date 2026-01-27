@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1b1b2f 0, #050510 55%, #000 100%);
+    color: #f5f5f5;
+    min-height: 100vh;
+    position: relative;
+}
+
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.25) 0, transparent 50%),
+        radial-gradient(circle at 80% 10%, rgba(0, 255, 255, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 50% 90%, rgba(255, 0, 128, 0.18) 0, transparent 55%);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7vw;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(to bottom, rgba(5, 5, 15, 0.9), transparent);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo .vh {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8a2be2, #ff007a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo .name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #fdfdfd;
+}
+
+nav a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #d0d0ff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #ffffff;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 7vw 60px;
+}
+
+.hero {
+    padding: 60px 0 40px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.hero-content h2 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #c0c0ff;
+}
+
+.highlight {
+    color: #00f5ff;
+}
+
+.hero-content p {
+    margin-top: 14px;
+    max-width: 520px;
+    color: #e0e0ff;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #8a2be2, #ff007a);
+    color: #fff;
+}
+
+.btn.secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #f0f0ff;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 18px rgba(255, 0, 128, 0.35);
+}
+
+.card {
+    margin-top: 30px;
+    padding: 22px 20px;
+    border-radius: 18px;
+    background: rgba(5, 5, 20, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #fdfdff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #dcdcff;
+    font-size: 0.95rem;
+}
+
+.tags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(138, 43, 226, 0.18);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.player-card {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    background: rgba(15, 15, 35, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #00f5ff, #ff007a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.player-info h4 {
+    font-size: 0.95rem;
+}
+
+.player-info .role {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #c0c0ff;
+}
+
+.player-info p {
+    font-size: 0.8rem;
+    color: #d0d0ff;
+    margin-top: 4px;
+}
+
+.requirements {
+    margin-top: 10px;
+    list-style: none;
+    color: #e0e0ff;
+    font-size: 0.9rem;
+}
+
+.requirements li {
+    margin-bottom: 4px;
+}
+
+.apply-box {
+    margin-top: 14px;
+}
+
+.apply-box p {
+    margin-bottom: 8px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.links a {
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #c0e8ff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 245, 255, 0.4);
+    background: rgba(0, 245, 255, 0.06);
+    transition: 0.2s ease;
+}
+
+.links a:hover {
+    background: rgba(0, 245, 255, 0.16);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0 30px;
+    font-size: 0.8rem;
+    color: #a0a0c0;
+    opacity: 0.8;
+}
