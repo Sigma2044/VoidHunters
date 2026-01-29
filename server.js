@@ -1,39 +1,33 @@
-const menuBtn = document.getElementById("menuBtn");
-const menuOverlay = document.getElementById("menuOverlay");
+const express = require("express");
+const cors = require("cors");
+const Database = require("@replit/database");
 
-menuBtn.onclick = () => menuOverlay.style.display = "block";
-menuOverlay.onclick = () => menuOverlay.style.display = "none";
+const db = new Database();
+const app = express();
 
-const shopList = document.getElementById("shopList");
-const addShopBtn = document.getElementById("addShop");
+app.use(cors());
+app.use(express.json());
 
-function loadShops() {
-  const shops = JSON.parse(localStorage.getItem("shops") || "[]");
-  shopList.innerHTML = "";
-  shops.forEach(shop => {
-    const div = document.createElement("div");
-    div.className = "shop-card";
-    div.innerHTML = `
-      <strong>${shop.name}</strong><br>
-      Besitzer: ${shop.owner}<br>
-      Ort: ${shop.coords}
-    `;
-    shopList.appendChild(div);
-  });
-}
+// Shops abrufen
+app.get("/shops", async (req, res) => {
+  const shops = (await db.get("shops")) || [];
+  res.json(shops);
+});
 
-addShopBtn.onclick = () => {
-  const name = document.getElementById("shopName").value;
-  const owner = document.getElementById("shopOwner").value;
-  const coords = document.getElementById("shopCoords").value;
+// Shop hinzufügen
+app.post("/shops", async (req, res) => {
+  const { name, owner, coords } = req.body;
 
-  if (!name || !owner || !coords) return alert("Bitte alles ausfüllen!");
+  if (!name || !owner || !coords) {
+    return res.status(400).json({ error: "Fehlende Daten" });
+  }
 
-  const shops = JSON.parse(localStorage.getItem("shops") || "[]");
+  const shops = (await db.get("shops")) || [];
   shops.push({ name, owner, coords });
-  localStorage.setItem("shops", JSON.stringify(shops));
 
-  loadShops();
-};
+  await db.set("shops", shops);
 
-loadShops();
+  res.json({ success: true });
+});
+
+app.listen(3000, () => console.log("Server läuft auf Port 3000"));
