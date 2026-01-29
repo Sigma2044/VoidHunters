@@ -80,21 +80,61 @@ header {
   border-radius: 10px;
 }
 
+.social-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .social-buttons a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin: 10px;
-  padding: 12px 28px;
-  background: rgba(20, 20, 20, 0.85);
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 8px;
+  padding: 12px 26px;
   font-size: 1.1rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  border: 2px solid #a020f0;
-  box-shadow: 0 0 12px #a020f0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
   transition: 0.25s ease;
 }
+
+/* Discord */
+.discord-btn {
+  background: #5865F2;
+  box-shadow: 0 0 12px #5865F2;
+}
+.discord-btn:hover {
+  background: #4752C4;
+  box-shadow: 0 0 20px #7A85FF;
+}
+
+/* Instagram */
+.insta-btn {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  box-shadow: 0 0 12px #d62976;
+}
+.insta-btn:hover {
+  box-shadow: 0 0 20px #ff4db8;
+  transform: translateY(-3px);
+}
+
+/* YouTube */
+.yt-btn {
+  background: #FF0000;
+  box-shadow: 0 0 12px #FF0000;
+}
+.yt-btn:hover {
+  background: #CC0000;
+  box-shadow: 0 0 20px #FF3333;
+  transform: translateY(-3px);
+}
+
+/* Icon Style */
+.icon {
+  font-size: 1.3rem;
+}
+
 
 /* Hover-Effekt */
 .social-buttons a:hover {
