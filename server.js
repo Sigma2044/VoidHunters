@@ -1,48 +1,39 @@
-const express = require("express");
-const path = require("path");
+const menuBtn = document.getElementById("menuBtn");
+const menuOverlay = document.getElementById("menuOverlay");
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+menuBtn.onclick = () => menuOverlay.style.display = "block";
+menuOverlay.onclick = () => menuOverlay.style.display = "none";
 
-// View Engine
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "Views"));
+const shopList = document.getElementById("shopList");
+const addShopBtn = document.getElementById("addShop");
 
-// Static Files
-app.use(express.static(path.join(__dirname, "public")));
+function loadShops() {
+  const shops = JSON.parse(localStorage.getItem("shops") || "[]");
+  shopList.innerHTML = "";
+  shops.forEach(shop => {
+    const div = document.createElement("div");
+    div.className = "shop-card";
+    div.innerHTML = `
+      <strong>${shop.name}</strong><br>
+      Besitzer: ${shop.owner}<br>
+      Ort: ${shop.coords}
+    `;
+    shopList.appendChild(div);
+  });
+}
 
-app.get("/", (req, res) => {
-    const clan = {
-        name: "Void Hunters",
-        network: "opsucht.net",
-        tagline: "Wir jagen nicht Kills – wir jagen Dominanz.",
-        description: "Void Hunters ist ein kompetitiver Clan auf opsucht.net mit Fokus auf Teamplay, Aim und cleanem Movement.",
-        focus: ["BedWars", "SkyPvP", "Practice", "Events"],
-        recruitmentOpen: true,
-        requirements: [
-            "Mindestens 14 Jahre alt",
-            "Aktiv auf opsucht.net",
-            "Teamfähig, kein Ego-Trip",
-            "Discord & funktionierendes Mikro",
-            "Grundverständnis von Calls & Rotations"
-        ],
-        socials: {
-            discord: "https://discord.gg/deinlink",
-            opsuchtProfile: "https://opsucht.net",
-            youtube: "#",
-            twitch: "#"
-        },
-        roster: [
-            { name: "Rocket", role: "Leader", note: "Shotcaller & Strat-Brain" },
-            { name: "VoidNova", role: "Co-Leader", note: "Aim Demon" },
-            { name: "Skylur", role: "Core", note: "Support & Clutch" },
-            { name: "Nyx", role: "Core", note: "Entry & Pressure" }
-        ]
-    };
+addShopBtn.onclick = () => {
+  const name = document.getElementById("shopName").value;
+  const owner = document.getElementById("shopOwner").value;
+  const coords = document.getElementById("shopCoords").value;
 
-    res.render("index", { clan });
-});
+  if (!name || !owner || !coords) return alert("Bitte alles ausfüllen!");
 
-app.listen(PORT, () => {
-    console.log(`Void Hunters Website läuft auf Port ${PORT}`);
-});
+  const shops = JSON.parse(localStorage.getItem("shops") || "[]");
+  shops.push({ name, owner, coords });
+  localStorage.setItem("shops", JSON.stringify(shops));
+
+  loadShops();
+};
+
+loadShops();
