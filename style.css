@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#menuBtn {
+  background: #8a2be2;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 20px;
+}
+
+/* MENU OVERLAY */
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+}
+
+.menu-content {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.menu-content a {
+  display: block;
+  font-size: 30px;
+  margin: 25px 0;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.menu-content a:hover {
+  color: #8a2be2;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.clan-logo {
+  width: 220px;
+  filter: drop-shadow(0 0 10px #8a2be2);
+}
+
+.clan-name {
+  font-size: 42px;
+  color: black;
+  background: white;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 40px 20px;
+  backdrop-filter: blur(3px);
+}
+
+/* SHOP FORM */
+.shop-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.shop-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  width: 200px;
+}
+
+#addShop {
+  padding: 12px 20px;
+  background: #8a2be2;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+/* SHOP LIST */
+.shop-card {
+  background: rgba(255,255,255,0.12);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  animation: fadeIn 0.4s ease;
+  border-left: 4px solid #8a2be2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.discord-btn, .insta-btn, .yt-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.discord-btn { background: #5865F2; }
+.insta-btn {
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+.yt-btn { background: #FF0000; }
+
+/* PROJEKTE */
+.project-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.12);
+  padding: 20px;
+  border-radius: 10px;
+  width: 260px;
+  border-left: 4px solid #8a2be2;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .clan-name { font-size: 32px; }
+  .logo-text { font-size: 20px; }
+  #menuBtn { font-size: 18px; }
+}
