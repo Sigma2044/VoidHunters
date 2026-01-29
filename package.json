@@ -6,7 +6,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "ejs": "^3.1.10"
+    "express": "latest",
+    "cors": "latest",
+    "@replit/database": "latest"
   }
 }
