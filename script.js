@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   const SUPABASE_URL = "https://YOUR_PROJECT_ID.supabase.co";
-  const SUPABASE_KEY = "YOUR_ANON_KEY";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3a2FmeGZjZmJrcGJub3J1dGt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk2NTQzNDYsImV4cCI6MjA4NTIzMDM0Nn0.mwXgxHmJhXWCEliEPZDNzB9Qn0B3-2IScW9qBkoXsgI";
 
   const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
