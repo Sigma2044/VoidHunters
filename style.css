@@ -1,175 +1,105 @@
-body {
+bbody {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
   background-image: url("Background.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  color: white;
+  background-repeat: no-repeat;
 }
 
 .overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   z-index: -1;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 20px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(6px);
+  align-items: center;
+  padding: 20px;
+  background-color: #111;
+  border-bottom: 1px solid #333;
 }
 
 .logo-text {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 2rem;
+  color: #a020f0;
+  text-shadow: 0 0 10px #a020f0;
 }
 
 #menuBtn {
-  background: #8a2be2;
+  font-size: 1.5rem;
+  background: none;
   border: none;
-  padding: 10px 15px;
-  color: white;
+  color: #fff;
   cursor: pointer;
-  border-radius: 6px;
-  font-size: 20px;
 }
 
-/* MENU OVERLAY */
 #menuOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
   display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  z-index: 10;
 }
 
 .menu-content {
-  margin-top: 120px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
 }
 
 .menu-content a {
-  display: block;
-  font-size: 30px;
-  margin: 25px 0;
-  color: white;
+  color: #a020f0;
+  font-size: 1.5rem;
+  margin: 20px;
   text-decoration: none;
-  transition: 0.2s;
 }
 
-.menu-content a:hover {
-  color: #8a2be2;
-}
-
-/* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
 }
 
 .clan-logo {
-  width: 220px;
-  filter: drop-shadow(0 0 10px #8a2be2);
+  width: 200px;
+  filter: drop-shadow(0 0 10px #a020f0);
 }
 
-.clan-name {
-  font-size: 42px;
-  color: black;
-  background: white;
-  padding: 12px 25px;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-/* SECTIONS */
 .section {
   padding: 40px 20px;
-  backdrop-filter: blur(3px);
-}
-
-/* SHOP FORM */
-.shop-form {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.shop-form input {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  width: 200px;
-}
-
-#addShop {
-  padding: 12px 20px;
-  background: #8a2be2;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-}
-
-/* SHOP LIST */
-.shop-card {
-  background: rgba(255,255,255,0.12);
-  padding: 15px;
+  background-color: rgba(20, 20, 20, 0.8);
+  margin: 20px;
   border-radius: 10px;
-  margin-bottom: 10px;
-  animation: fadeIn 0.4s ease;
-  border-left: 4px solid #8a2be2;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* SOCIAL BUTTONS */
-.social-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.discord-btn, .insta-btn, .yt-btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+.social-buttons a {
   display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #a020f0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-.discord-btn { background: #5865F2; }
-.insta-btn {
-  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-}
-.yt-btn { background: #FF0000; }
-
-/* PROJEKTE */
 .project-list {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .project-card {
-  background: rgba(255,255,255,0.12);
+  background-color: #222;
   padding: 20px;
   border-radius: 10px;
-  width: 260px;
-  border-left: 4px solid #8a2be2;
-}
-
-/* MOBILE OPTIMIZATION */
-@media (max-width: 600px) {
-  .clan-name { font-size: 32px; }
-  .logo-text { font-size: 20px; }
-  #menuBtn { font-size: 18px; }
+  flex: 1;
+  min-width: 200px;
 }
