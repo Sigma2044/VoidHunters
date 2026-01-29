@@ -83,12 +83,27 @@ header {
 .social-buttons a {
   display: inline-block;
   margin: 10px;
-  padding: 10px 20px;
-  background-color: #a020f0;
-  color: #fff;
+  padding: 12px 28px;
+  background: rgba(20, 20, 20, 0.85);
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid #a020f0;
+  box-shadow: 0 0 12px #a020f0;
+  transition: 0.25s ease;
 }
+
+/* Hover-Effekt */
+.social-buttons a:hover {
+  background: #a020f0;
+  color: #fff;
+  box-shadow: 0 0 20px #c040ff, 0 0 40px #a020f0;
+  transform: translateY(-3px);
+}
+
 
 .project-list {
   display: flex;
