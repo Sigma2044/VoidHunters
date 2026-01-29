@@ -3,7 +3,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #0a0a0a;
   color: #ffffff;
-  background-image: url("Background.png");
+  background-image: url("background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ header {
 
 .logo-text {
   font-size: 2rem;
-  color: #ffffff; /* WEISS */
+  color: #ffffff;
   text-shadow: 0 0 10px #a020f0;
 }
 
@@ -92,7 +92,7 @@ header {
   margin: 10px;
   padding: 12px 26px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
   color: #fff;
@@ -101,12 +101,13 @@ header {
 
 /* Discord */
 .discord-btn {
-  background: #5865F2;
+  background-color: #5865F2;
   box-shadow: 0 0 12px #5865F2;
 }
 .discord-btn:hover {
-  background: #4752C4;
+  background-color: #4752C4;
   box-shadow: 0 0 20px #7A85FF;
+  transform: translateY(-3px);
 }
 
 /* Instagram */
@@ -121,29 +122,18 @@ header {
 
 /* YouTube */
 .yt-btn {
-  background: #FF0000;
+  background-color: #FF0000;
   box-shadow: 0 0 12px #FF0000;
 }
 .yt-btn:hover {
-  background: #CC0000;
+  background-color: #CC0000;
   box-shadow: 0 0 20px #FF3333;
   transform: translateY(-3px);
 }
 
-/* Icon Style */
-.icon {
+.social-buttons i {
   font-size: 1.3rem;
 }
-
-
-/* Hover-Effekt */
-.social-buttons a:hover {
-  background: #a020f0;
-  color: #fff;
-  box-shadow: 0 0 20px #c040ff, 0 0 40px #a020f0;
-  transform: translateY(-3px);
-}
-
 
 .project-list {
   display: flex;
@@ -158,4 +148,3 @@ header {
   flex: 1;
   min-width: 200px;
 }
-
