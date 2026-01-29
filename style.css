@@ -1,4 +1,4 @@
-bbody {
+body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #0a0a0a;
@@ -28,7 +28,7 @@ header {
 
 .logo-text {
   font-size: 2rem;
-  color: #a020f0;
+  color: #ffffff; /* WEISS */
   text-shadow: 0 0 10px #a020f0;
 }
 
@@ -103,3 +103,4 @@ header {
   flex: 1;
   min-width: 200px;
 }
+
