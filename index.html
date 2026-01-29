@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Void Hunters Clan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <header>
+    <h1 class="logo-text">VOID HUNTERS</h1>
+    <button id="menuBtn">☰</button>
+  </header>
+
+  <div id="menuOverlay">
+    <div class="menu-content">
+      <a href="#shops">Shops</a>
+      <a href="#bewerben">Bewerben</a>
+      <a href="#projekte">Projekte</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <img src="clanlogo.png" alt="Clan Logo" class="clan-logo" />
+    <h2 class="clan-name">VOID HUNTERS</h2>
+  </section>
+
+  <section id="shops" class="section">
+    <h2>Shops</h2>
+    <p>Trage deinen Shop ein:</p>
+
+    <div class="shop-form">
+      <input id="shopName" placeholder="Shop Name" />
+      <input id="shopOwner" placeholder="Spielername" />
+      <input id="shopCoords" placeholder="Koordinaten / Ort" />
+      <button id="addShop">Hinzufügen</button>
+    </div>
+
+    <h3>Alle Shops:</h3>
+    <div id="shopList"></div>
+  </section>
+
+  <section id="bewerben" class="section">
+    <h2>Bewerben</h2>
+    <p>Du willst dem Clan beitreten? Hier findest du alle Infos.</p>
+
+    <div class="social-buttons">
+      <a href="https://discord.gg/sb69sJBzYV" class="discord-btn" target="_blank">Discord</a>
+      <a href="https://www.instagram.com/voidhunters_offical/" class="insta-btn" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCLk9hvjjRsSonIRR5PR6pMA" class="yt-btn" target="_blank">YouTube</a>
+    </div>
+  </section>
+
+  <section id="projekte" class="section">
+    <h2>Projekte</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>Projekt 1</h3>
+        <p>Kurzbeschreibung des Projekts.</p>
+      </div>
+      <div class="project-card">
+        <h3>Projekt 2</h3>
+        <p>Kurzbeschreibung des Projekts.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
